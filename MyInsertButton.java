@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class MyInsertButton extends JFrame implements ActionListener{
 
-    Button b;
+    Button b1,b2;
     TextField t1,t2,t3,t4,t5;
 
     MyInsertButton()
@@ -22,8 +22,8 @@ public class MyInsertButton extends JFrame implements ActionListener{
         l.setBounds(250,50,100,20);
         add(l);
 
-        Label l1=new Label("Aeroplane ID");
-        l1.setBounds(100,150,100,20);
+        Label l1=new Label("Aeroplane ID (Unique)");
+        l1.setBounds(100,150,200,20);
         add(l1);
 
         Label l2=new Label("Source");
@@ -63,34 +63,48 @@ public class MyInsertButton extends JFrame implements ActionListener{
         t5.setBounds(350,350,100,20);
         add(t5);
 
-        b=new Button("Submit");
-        b.setBounds(480,500,80,30);
-        add(b);
+        b1=new Button("Submit");
+        b1.setBounds(260,400,80,30);
+        add(b1);
 
-        b.addActionListener(this);
+        b2=new Button("Back");
+        b2.setBounds(480,500,80,30);
+        add(b2);
+
+        b1.addActionListener(this);
+        b2.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent ae)
     {
-        String id=t1.getText();
-        String source=t2.getText();
-        String dest=t3.getText();
-        String arr=t4.getText();
-        String dept=t5.getText();
-
-        Conn c=new Conn();
-
-        String str="insert into aero values('"+id+"','"+source+"','"+dest+"','"+arr+"','"+dept+"')";
-
-        try{
-           c.s.executeUpdate(str);
-        }catch (Exception e)
+        if(ae.getSource()==b1)
         {
-            System.out.println(e);
+            String id = t1.getText();
+            String source = t2.getText();
+            String dest = t3.getText();
+            String arr = t4.getText();
+            String dept = t5.getText();
+
+            Conn c = new Conn();
+
+            String str = "insert into aero values('" + id + "','" + source + "','" + dest + "','" + arr + "','" + dept + "')";
+
+            try {
+                c.s.executeUpdate(str);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+            JOptionPane.showMessageDialog(null,"Details Added Successfully");
         }
 
-        new ManagementSystem();
-        this.setVisible(false);
+        else if(ae.getSource()==b2)
+        {
+            new ManagementSystem();
+            this.setVisible(false);
+
+        }
+
     }
 
     public static void main()

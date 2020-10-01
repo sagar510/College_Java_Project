@@ -6,7 +6,8 @@ import javax.swing.*;
 
 public class ManagementSystem extends JFrame implements ActionListener{
 
-    Button b1,b2,b3,b5,b6;
+    Label l;
+    Button b1,b2,b3,b4,b5,b6;
 
     ManagementSystem()
     {
@@ -16,28 +17,33 @@ public class ManagementSystem extends JFrame implements ActionListener{
 
 
         setLayout(null);
+        l=new Label("Airline Management System");
+        l.setBounds(125,50,300,20);
+        add(l);
+
         b1 = new Button("Insert");
-        b1.setBounds(150, 60, 100, 20);
+        b1.setBounds(150, 100, 100, 20);
         add(b1);
         b2 = new Button("Delete");
-        b2.setBounds(150, 90, 100, 20);
+        b2.setBounds(150, 130, 100, 20);
         add(b2);
         b3 = new Button("Update");
-        b3.setBounds(150, 120, 100, 20);
+        b3.setBounds(150, 160, 100, 20);
         add(b3);
-        Button b4 = new Button("Print");
-        b4.setBounds(150, 150, 100, 20);
+        b4 = new Button("Print");
+        b4.setBounds(150, 190, 100, 20);
         add(b4);
         b5 = new Button("Exit");
-        b5.setBounds(150, 180, 100, 20);
+        b5.setBounds(150, 220, 100, 20);
         add(b5);
         b6=new Button("Login");
-        b6.setBounds(150,210,100,20);
-        add(b6);
+        b6.setBounds(150,250,100,20);
+       // add(b6);
 
         b1.addActionListener(this);
         b2.addActionListener(this);
         b3.addActionListener(this);
+        b4.addActionListener(this);
         b5.addActionListener(this);
         b6.addActionListener(this);
 
@@ -58,6 +64,11 @@ public class ManagementSystem extends JFrame implements ActionListener{
         else if(e.getSource()==b3)
         {
             new MyUpdateButton();
+            this.setVisible(false);
+        }
+        else if(e.getSource()==b4)
+        {
+            new MyPrintButton();
             this.setVisible(false);
         }
         else if(e.getSource()==b5)
