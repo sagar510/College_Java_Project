@@ -7,7 +7,7 @@ import javax.swing.*;
 public class ManagementSystem extends JFrame implements ActionListener{
 
     Label l;
-    Button b1,b2,b3,b4,b5,b6;
+    Button b1,b2,b3,b4,b5;
 
     ManagementSystem()
     {
@@ -36,9 +36,7 @@ public class ManagementSystem extends JFrame implements ActionListener{
         b5 = new Button("Exit");
         b5.setBounds(150, 220, 100, 20);
         add(b5);
-        b6=new Button("Login");
-        b6.setBounds(150,250,100,20);
-       // add(b6);
+      
 
         b1.addActionListener(this);
         b2.addActionListener(this);
@@ -74,11 +72,6 @@ public class ManagementSystem extends JFrame implements ActionListener{
         else if(e.getSource()==b5)
         {
             System.exit(0);
-        }
-        else if(e.getSource()==b6)
-        {
-            new Login();
-            this.setVisible(false);
         }
     }
 
