@@ -14,8 +14,6 @@ public class ManagementSystem extends JFrame implements ActionListener{
         setLocation(500,200);
         setSize(400,300);
         setVisible(true);
-
-
         setLayout(null);
         l=new Label("Airline Management System");
         l.setBounds(125,50,300,20);
@@ -37,15 +35,12 @@ public class ManagementSystem extends JFrame implements ActionListener{
         b5.setBounds(150, 220, 100, 20);
         add(b5);
       
-
         b1.addActionListener(this);
         b2.addActionListener(this);
         b3.addActionListener(this);
         b4.addActionListener(this);
         b5.addActionListener(this);
         b6.addActionListener(this);
-
-
     }
 
     @Override
@@ -94,8 +89,6 @@ public class MyInsertButton extends JFrame implements ActionListener{
 
     MyInsertButton()
     {
-
-
         setBounds(400,100,600,600);
         setVisible(true);
 
@@ -211,8 +204,6 @@ public class MyDeleteButton extends JFrame implements ActionListener{
     {
         setBounds(400,100,600,600);
         setVisible(true);
-
-
         setLayout(null);
         l=new Label("Enter Aeroplane ID to Delete ");
         l.setBounds(100,100,200,20);
@@ -241,8 +232,6 @@ public class MyDeleteButton extends JFrame implements ActionListener{
         {
             try{
             String identity=t.getText();
-
-
             Conn c=new Conn();
             String str1="select * from aero where id='"+identity+"'";
             ResultSet rs=c.s.executeQuery(str1);
@@ -278,8 +267,6 @@ public class MyDeleteButton extends JFrame implements ActionListener{
 
 }
 
-
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -294,7 +281,6 @@ public class MyUpdateButton extends JFrame implements ActionListener{
     {
         setBounds(400,100,600,600);
         setVisible(true);
-
         setLayout(null);
         l1=new Label("Enter Aeroplane ID ");
         l1.setBounds(100,100,200,20);
@@ -345,8 +331,6 @@ public class MyUpdateButton extends JFrame implements ActionListener{
                 String updated_value=t2.getText();
                 String wtu=(String) jc.getSelectedItem();
                 String str;
-
-
                 if(identity.isEmpty() || updated_value.isEmpty())
                 {
                     JOptionPane.showMessageDialog(null,"Please! Enter Value");
@@ -380,9 +364,6 @@ public class MyUpdateButton extends JFrame implements ActionListener{
             this.setVisible(false);
         }
     }
-
-
-
 }
 
 
@@ -434,9 +415,6 @@ public class MyPrintButton extends JFrame implements ActionListener {
         l5.setBounds(480,70,120,20);
         add(l5);
 
-
-
-
         Conn c=new Conn();
         String str="select * from aero";
 
@@ -463,8 +441,6 @@ public class MyPrintButton extends JFrame implements ActionListener {
     }
 
 }
-
-
 
 
 import java.sql.Connection;
@@ -534,10 +510,7 @@ public class Login extends JFrame implements ActionListener {
         b.setBounds(150,150,80,30);
         add(b);
 
-
         b.addActionListener(this);
-
-
     }
 
     public void actionPerformed(ActionEvent ae)
@@ -573,6 +546,4 @@ public class Login extends JFrame implements ActionListener {
     {
         new Login();
     }
-
-
 }
