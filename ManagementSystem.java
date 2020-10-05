@@ -177,7 +177,6 @@ public class MyInsertButton extends JFrame implements ActionListener{
         {
             new ManagementSystem();
             this.setVisible(false);
-
         }
 
     }
@@ -262,9 +261,6 @@ public class MyDeleteButton extends JFrame implements ActionListener{
             this.setVisible(false);
         }
     }
-
-
-
 }
 
 import java.awt.*;
@@ -439,7 +435,6 @@ public class MyPrintButton extends JFrame implements ActionListener {
     {
         new MyPrintButton();
     }
-
 }
 
 
@@ -466,15 +461,10 @@ public class Conn {
     }
 }
 
-
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import javax.swing.*;
-
-
-
 
 public class Login extends JFrame implements ActionListener {
     JLabel l1,l2;
